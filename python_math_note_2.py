@@ -127,3 +127,8 @@ for x in range(6):
      print(x)
 else:
      print("Finally finished.")
+#Nested Loop example
+for left in range(7):
+  for right in range(left, 7):
+    print("[" + str(left) + "|" + str(right) + "]", end=" ")
+  print()
