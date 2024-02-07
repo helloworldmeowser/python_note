@@ -100,22 +100,26 @@ addition_table(30)
 # None
 
 #For Loops example note
+print("Loop example")
 product = 1
 for n in range(1,10):
   product = product * n
 
 print(product)
 #Another For Loops example 
+print("Loop example")
 fruits = ["apple", "orange", "cherry"]
 for x in fruits:
      print(x)
 #Another For Loop example with break statement
+print("Break Statement with Loop Example")
 fruits = ["apple", "orange", "cherry"]
 for x in fruits:
      print(x)
      if x == "orange":
         break
 #Another For Loop example with continue statement
+print("Continue Statement with Loop Example")
 fruits = ["apple", "orange", "cherry"]
 for x in fruits:
      print(x)
@@ -123,12 +127,85 @@ for x in fruits:
         continue
      print(x)
 #For Loop example with range function
+print("Range with Loop Example")
 for x in range(6):
      print(x)
 else:
      print("Finally finished.")
 #Nested Loop example
+print("Nested Loop Example")
 for left in range(7):
   for right in range(left, 7):
     print("[" + str(left) + "|" + str(right) + "]", end=" ")
   print()
+#Recursion function to call itself example
+print("Recursion Example")
+def factorial(n):
+  print("Factorial called with " + str(n))
+  if n < 2:
+    print("Returning 1")
+    return 1
+  result = n * factorial(n-1)
+  print("Returning " + str(result) + " for factorial of " + str(n))
+  return result
+
+factorial(4)
+print("Loop example with range function")
+# This function will accept an integer variable "end" and count by 10
+# from 0 to the "end" value.
+def count_by_10(end):
+    # Initializeq the "count" variable as a string.
+    count = ""
+
+    # The range function parameters instruct Python to start the count  
+    # at 0 and stop at the variable given as the upper end of the range. 
+    # Since the value of the high end of a range is excluded by default,  
+    # you can make Python include the "end" value by adding +1 to it. 
+    # The third parameter tells Python to increment the count by 10.
+    for number in range(0,end+1,10):
+
+        # Although the variable "count" will hold a count of integers,  
+        # this example will be converted to a string using "str(number)" 
+        # in order to display the incremental count from 0 to the "end" 
+        # value on the same line with a space " " separating each 
+        # number.  
+        count += str(number) + " "
+        
+    # The .strip() method will trim the final space " " from the end of 
+    # the string "count"  
+    return count.strip()
+
+
+# Call the function with 1 integer parameter.
+print(count_by_10(100))
+# Should print 0 10 20 30 40 50 60 70 80 90 100
+
+print("While Loop example")
+# For this example, the while loop will count down by threes starting 
+# from 18 and ending at 0.
+starting_number = 18
+
+# The while loop will continue to loop until it reaches 0.
+while starting_number >= 0:
+
+    # To make the sequence of numbers easier to read, include a space
+    # between each number in the sequence. You can override the default 
+    # behavior of the print() function by using the "end=" parameter with
+    # the print() function. The syntax for adding a space is: end=" " 
+    print(starting_number, end=" ")
+    
+    # Decrement the "starting_number" variable by -3.
+    starting_number -= 3
+
+# Should print 18 15 12 9 6 3 0
+print("Recursion example")
+def factorial(n):
+  print("Factorial called with " + str(n))
+  if n < 2:
+    print("Returning 1")
+    return 1
+  result = n * factorial(n-1)
+  print("Returning " + str(result) + " for factorial of " + str(n))
+  return result
+
+factorial(4)
