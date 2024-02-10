@@ -75,5 +75,14 @@ def bill_history(payment_prices):
   for pay, price in payment_prices.items(): 
     result += "A {} costs {} dollars\n".format(pay, price) # Use a string method to format the required string. 
   return result
-
 print(bill_history({"Rent":1600, "Internet":80, "Renter Insurance":17, "Car Insurance":420}))
+
+#note that range(start, stop, step)
+height = eval(input("Enter height of christmas tree: "))
+for row in range(height):
+    #From small to large number
+    for count in range(height - row):
+        print(end=" ")
+    for count in range(2*row + 1):
+        print(end="*")
+    print()
