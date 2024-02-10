@@ -34,11 +34,12 @@ while number <= 10: # Complete the while loop condition
     number += 1 # Increment the variable
 print("The following code print yes and no:")
 for number in range(5):
+    # number % 2 without it the code would just print yes only once
     if number % 2 == 0:
         print("yes")
     else:
         print("no")
-        
+
 print("Multiplication table till 5 for 3,5,8:")
 def multiplication_table(number):
     # Initialize the appropriate variable
@@ -65,3 +66,14 @@ def reminder_code(sentence, word):
 print(reminder_code("create a reuseable function", "reuseable"))
 print(reminder_code("add comment where leave yourself notes", "add"))
 print(reminder_code("refactor code", "refactor"))
+
+print("The following code will print bill cost: ")
+def bill_history(payment_prices):
+  result = ""
+  # Complete the for loop to iterate through the key and value items 
+  # in the dictionary.
+  for pay, price in payment_prices.items(): 
+    result += "A {} costs {} dollars\n".format(pay, price) # Use a string method to format the required string. 
+  return result
+
+print(bill_history({"Rent":1600, "Internet":80, "Renter Insurance":17, "Car Insurance":420}))
