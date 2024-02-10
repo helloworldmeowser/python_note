@@ -38,6 +38,7 @@ for number in range(5):
         print("yes")
     else:
         print("no")
+        
 print("Multiplication table till 5 for 3,5,8:")
 def multiplication_table(number):
     # Initialize the appropriate variable
@@ -55,3 +56,12 @@ def multiplication_table(number):
 multiplication_table(3) 
 multiplication_table(5) 
 multiplication_table(8) 
+
+print("Best practice for writing code: ")
+def reminder_code(sentence, word):
+    # Complete the return statement using a string method.
+    #word = will not capitalize but word.upper() will capitalize
+    return sentence.replace(word, word.upper())
+print(reminder_code("create a reuseable function", "reuseable"))
+print(reminder_code("add comment where leave yourself notes", "add"))
+print(reminder_code("refactor code", "refactor"))
