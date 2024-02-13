@@ -28,3 +28,8 @@ def write_report(dictionary, report_file):
       f.write(str(k)+':'+str(dictionary[k])+'\n')
     f.close()
 write_report(dictionary, '/home/student-04-074a7481e506/data/report.txt')
+
+# Open() means returns a file object which is assigned to the variable file
+# Readline() means reads one line from the files and returns it as a string
+# Read() means reads the entire file and returns it as a string
+# Close() means closes the file
