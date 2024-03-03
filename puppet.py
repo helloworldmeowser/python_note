@@ -41,3 +41,15 @@ class ntp {
     ensure  => running,
   }
 }
+#Example Five
+#Built-in facts
+#is-virtual fact together with conditional statement to devide whether the smartmontools package should be installed or purged
+if $fact['is_virtual']{ # Fact is variable and all variable names are preceded by a dollar sign in Puppet's DSL
+    package {'smartmontools' # each condition contain package resource
+      ensure => purged, # equal greater than is to assign value to the attributes 
+    }
+} else {
+    package {'smartmontools'
+      ensure => installed,
+    }
+}
