@@ -53,3 +53,25 @@ if $fact['is_virtual']{ # Fact is variable and all variable names are preceded b
       ensure => installed,
     }
 }
+#Example Six
+#Managing resource relationship
+# write resource types in lowercase when declaring them, but capitalize them when referring to them from another resource's attributes.
+vim ntp.pp
+class ntp {
+  package { 'ntp':
+    ensure => latest,
+  } 
+  file { '/etc/ntp.conf':
+    source => '/home/user/ntp.conf',
+    replace => true,
+    require => Package['ntp'], # resource types are written in lowercase, but relationships use uppercase for the 
+first letter of the resource. 
+    notify  => Service['ntp'],
+  }
+  service { 'ntp':
+    enable  => true,
+    ensure  => running,
+    require => File['/etc/ntp.conf'],
+  }
+}
+include ntp # tell Puppet that we want to apply the rules described in a class
